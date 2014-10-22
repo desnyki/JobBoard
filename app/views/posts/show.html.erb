@@ -1,0 +1,9 @@
+<div class="row show-post">
+	<div class="col-md-12">
+		<%= link_to "< All Jobs", posts_url %>
+		<h1><%= @post.title %></h1>
+		<%= image_tag @post.image.url(:medium) %>
+		<h2><%= @post.email %></h2>
+		<p><%= @post.body %></p>
+	</div>
+</div>

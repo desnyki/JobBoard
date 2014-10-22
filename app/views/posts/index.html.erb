@@ -1,0 +1,11 @@
+<h1>All Posts</h1>
+<%= will_paginate %>
+<ul class="posts">
+  <% @posts.reverse_each do |post| %>
+    <li>
+      <p><%= image_tag post.image.url(:thumb) %><%= l post.created_at, format: :short %></p>
+      <%= link_to post.title, post %>
+    </li>
+  <% end %>
+</ul>
+<%= will_paginate %>
