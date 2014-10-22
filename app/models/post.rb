@@ -8,10 +8,13 @@ class Post < ActiveRecord::Base
   	validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 
   	def self.search(query)
+  	  
 	  if query
-          find(:all, :conditions => ['body LIKE ?', "% #{query} %"] )
-        else
-          find(:all)
-        end
+	  	query = "%" + query.downcase + "%"
+        find(:all, :conditions => ['LOWER(title) LIKE ? OR LOWER(body) LIKE ?', query, query] )
+        #where("LOWER(title) = ? OR LOWER(body) = ?", query, query)
+	  else
+	    find(:all)
+	  end
 	end
 end

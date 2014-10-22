@@ -16,12 +16,9 @@ class PostsController < ApplicationController
     end
   end
   def index
-    @posts = Post.paginate(page: params[:page], per_page: 10)
+    @posts = Post.paginate(:per_page => 5, :page => params[:page]).search(params[:search])
   end
-  def search
-    @posts = Post.search(params[:search])
-  end
-   private
+  private
 
     def post_params
       params.require(:post).permit(:email, :title, :body, :image)

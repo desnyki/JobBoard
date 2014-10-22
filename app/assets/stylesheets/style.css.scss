@@ -14,7 +14,7 @@
 
 /* forms */
 
-input, textarea, select, .uneditable-input {
+.home input, .home textarea, .home select, .home .uneditable-input {
   border: 1px solid #bbb;
   width: 100%;
   margin-bottom: 15px;
@@ -23,6 +23,9 @@ input, textarea, select, .uneditable-input {
 
 input {
   height: auto !important;
+}
+#post_body{
+  height: 100px !important;
 }
 #error_explanation {
   color: red;
