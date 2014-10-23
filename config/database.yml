@@ -19,7 +19,7 @@ development:
   encoding: unicode
   database: JobBoard_development
   pool: 5
-  username: sampleuser
+  username: HxC
   password: lol
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -48,8 +48,8 @@ test:
   encoding: unicode
   database: JobBoard_test
   pool: 5
-  username: JobBoard
-  password:
+  username: HxC
+  password: lol
 
 production:
   adapter: postgresql
